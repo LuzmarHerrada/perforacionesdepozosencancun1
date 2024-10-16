@@ -1,0 +1,92 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+*{
+    scroll-behavior: smooth;
+    font-family: "Ubuntu", sans-serif;
+}
+.texto-borde {
+    -webkit-text-stroke: 3px #000;
+    /* color: transparent;  */
+}
+.texto-borde1 {
+    -webkit-text-stroke: 1px #000;
+    /* color: transparent;  */
+}
+.resaltHome {
+    display: relative;
+    flex-direction: column;
+    width: fit-content;
+}
+  
+.resaltHome:after {
+    transition: width 0.5s ease;
+    content: "";
+    height: 0.3rem;
+    width: 20%;
+    background: #ef16fa;
+    /* background: linear-gradient(90deg, rgba(255,0,191,1) 0%, rgba(138,0,255,1) 20%, rgba(255,0,42,1) 40%, rgba(255,208,0,1) 60%, rgba(255,0,96,1) 80%, rgba(255,0,158,1) 100%);; */
+}
+
+.resaltHeader {
+    display: relative;
+    flex-direction: column;
+    width: fit-content;
+}
+  
+.resaltHeader:after {
+    transition: width 0.5s ease;
+    content: "";
+    height: 0.15rem;
+    width: 0rem;
+    background: #ef16fa;
+}
+.resaltHeader:hover::after,
+.resaltHeader:focus::after,
+.resaltHeader:active:after {
+    height: 0.15rem;
+    width: 100%;
+    background: #ef16fa;
+    }
+.bg-gradiante{
+    background: linear-gradient(90deg, rgba(255,0,191,1) 0%, rgba(138,0,255,1) 20%, rgba(255,0,42,1) 40%, rgba(255,208,0,1) 60%, rgba(255,0,96,1) 80%, rgba(255,0,158,1) 100%);
+}    
+
+.ir-arriba{
+    display:none;
+    background-repeat:no-repeat;
+    font-size:20px;
+    color:black;
+    cursor:pointer;
+    position:fixed;
+    bottom:10px;
+    right:10px;
+    z-index:2;
+}
+
+div#slider { overflow: hidden; } /* las imágenes no van a salir del márgen de la pantalla*/
+div#slider figure img { width: 20%; float: left; }
+
+div#slider figure { 
+  position: relative;
+  width: 500%;
+  margin: 0;
+  left: 0;
+  text-align: left;
+  font-size: 0;
+  animation: 20s slidy infinite; /*el movimiento se va a mantener de forma indefinida -infinito-*/
+}
+
+@keyframes slidy {
+    0% { left: 0%; }
+    20% { left: 0%; }
+    25% { left: -100%; }
+    45% { left: -100%; }
+    50% { left: -200%; }
+    70% { left: -200%; }
+    75% { left: -300%; }
+    95% { left: -300%; }
+    100% { left: -400%; }
+    }
